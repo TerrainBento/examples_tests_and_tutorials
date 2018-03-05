@@ -1,0 +1,31 @@
+.DS_Store
+.ipynb_checkpoints
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+#*.py[cod]
+
+#
+# Distribution / packaging
+.Python
+env/
+bin/
+build/
+develop-eggs/
+dist/
+eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Ignore Figures
+*.png
+*.eps
+
+# Temporarily Ignore one folder
+examples_and_tests/*
