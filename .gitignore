@@ -27,5 +27,7 @@ var/
 *.png
 *.eps
 
+# Ignore Output NetCDFs
+steady_state_solutions/notebooks/*.nc
 # Temporarily Ignore one folder
 wv_ex_and_tests/*
