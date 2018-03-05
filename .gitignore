@@ -3,7 +3,7 @@
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
-#*.py[cod]
+*.py[cod]
 
 #
 # Distribution / packaging
@@ -28,4 +28,4 @@ var/
 *.eps
 
 # Temporarily Ignore one folder
-examples_and_tests/*
+wv_ex_and_tests/*
