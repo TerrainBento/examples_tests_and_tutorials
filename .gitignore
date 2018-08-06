@@ -28,6 +28,11 @@ var/
 *.eps
 
 # Ignore Output NetCDFs
-steady_state_solutions/notebooks/*.nc
+steady_state_solutions/notebooks/*/output_netcdfs/*.nc
 # Temporarily Ignore one folder
 wv_ex_and_tests/*
+
+# Ignore parts of docs folder
+docs/_build
+docs/_static
+docs/_templates
