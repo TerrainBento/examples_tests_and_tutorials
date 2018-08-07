@@ -24,7 +24,6 @@ var/
 *.egg
 
 # Ignore Figures
-*.png
 *.eps
 
 # Ignore Output NetCDFs
