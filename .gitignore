@@ -35,3 +35,5 @@ wv_ex_and_tests/*
 docs/_build
 docs/_static
 docs/_templates
+
+*.nc
