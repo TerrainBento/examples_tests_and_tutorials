@@ -59,21 +59,21 @@ def test_model_basic_steady_solution():
     assert errors == []
 
 
-def test_model_basic_var_m_steady_solution():
-    nb, errors = _notebook_run(os.path.join(_TEST_DIR, "coupled_process_elements/model_basic_var_m_steady_solution.ipynb"))
-    assert errors == []
-
-
-def test_model_basicCh_steady_solution():
-    nb, errors = _notebook_run(os.path.join(_TEST_DIR, "coupled_process_elements/model_basicCh_steady_solution.ipynb"))
-    assert errors == []
-
-
-def test_model_basicRt_steady_solution():
-    nb, errors = _notebook_run(os.path.join(_TEST_DIR, "coupled_process_elements/model_basicRt_steady_solution.ipynb"))
-    assert errors == []
-
-
-def test_model_basicVs_steady_solution():
-    nb, errors = _notebook_run(os.path.join(_TEST_DIR, "coupled_process_elements/model_basicVs_steady_solution.ipynb"))
-    assert errors == []
+# def test_model_basic_var_m_steady_solution():
+#     nb, errors = _notebook_run(os.path.join(_TEST_DIR, "coupled_process_elements/model_basic_var_m_steady_solution.ipynb"))
+#     assert errors == []
+#
+#
+# def test_model_basicCh_steady_solution():
+#     nb, errors = _notebook_run(os.path.join(_TEST_DIR, "coupled_process_elements/model_basicCh_steady_solution.ipynb"))
+#     assert errors == []
+#
+#
+# def test_model_basicRt_steady_solution():
+#     nb, errors = _notebook_run(os.path.join(_TEST_DIR, "coupled_process_elements/model_basicRt_steady_solution.ipynb"))
+#     assert errors == []
+#
+#
+# def test_model_basicVs_steady_solution():
+#     nb, errors = _notebook_run(os.path.join(_TEST_DIR, "coupled_process_elements/model_basicVs_steady_solution.ipynb"))
+#     assert errors == []
