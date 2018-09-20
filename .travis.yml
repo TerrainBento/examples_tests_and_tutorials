@@ -1,0 +1,66 @@
+env:
+  matrix:
+  - TRAVIS_PYTHON_VERSION="2.7"
+  - TRAVIS_PYTHON_VERSION="3.5"
+  - TRAVIS_PYTHON_VERSION="3.6"
+  global:
+    - CONDA_PREFIX=$HOME/miniconda
+    - MINICONDA_URL_BASE="https://repo.continuum.io/miniconda/Miniconda3-latest"
+    - MPLCONFIGDIR=$HOME/.config/matplotlib
+os:
+- linux
+- osx
+sudo: false
+before_install:
+- |
+  if [[ $TRAVIS_OS_NAME == "osx" ]]; then
+    brew remove --force $(brew list)
+    brew cleanup -s
+    rm -rf $(brew --cache)
+  fi
+install:
+- echo "Build on $TRAVIS_OS_NAME for Python $TRAVIS_PYTHON_VERSION"
+- |
+  if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
+    OS="MacOSX-x86_64"
+  else
+    OS="Linux-x86_64"
+  fi
+- curl $MINICONDA_URL_BASE-$OS.sh > $HOME/minconda.sh
+- bash $HOME/minconda.sh -b -p $CONDA_PREFIX
+- export PATH="$CONDA_PREFIX/bin:$PATH"
+- hash -r
+- conda config --set always_yes yes --set changeps1 no
+- conda create -n _testing python=$TRAVIS_PYTHON_VERSION
+- source activate _testing
+- conda install scripting -c csdms-stack
+- |
+  if [[ "$TRAVIS_BRANCH" == "release" ]]; then
+    conda install landlab -c landlab
+    conda install terrainbento -c terrainbento
+  else
+    pwd
+    cd ../..
+    git clone --depth=50 https://github.com/landlab/landlab.git landlab/landlab
+    cd landlab/landlab
+    git fetch origin master
+    git checkout -qf master
+    git submodule update --init --recursive
+    conda install --file=requirements.txt
+    python setup.py develop
+    cd ../../
+    git clone --depth=50 https://github.com/TerrainBento/terrainbento.git TerrainBento/terrainbento
+    cd TerrainBento/terrainbento
+    git fetch origin master
+    git checkout -qf master
+    conda install --file=requirements.txt
+    python setup.py develop
+    cd ../../Terrainbento/examples_tests_and_tutorials
+  fi
+- conda install jupyter dask holoviews pytest
+- conda info -a && conda list
+script:
+- pwd
+- travis_wait 50 pytest
+virtualenv:
+  system_site_packages: false
