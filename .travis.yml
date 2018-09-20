@@ -68,6 +68,6 @@ install:
 - conda info -a && conda list
 script:
 - pwd
-- travis_wait 50 pytest
+- travis_wait 120 pytest
 virtualenv:
   system_site_packages: false
