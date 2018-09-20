@@ -1,4 +1,6 @@
 import os
+import glob
+
 import subprocess
 import nbformat
 
@@ -51,6 +53,9 @@ def test_introduction_to_boundary_conditions():
 def test_introduction_to_output_writers():
     nb, errors = _notebook_run(os.path.join(_TEST_DIR, "example_usage/introduction_to_output_writers.ipynb"))
     assert errors == []
+    os.remove('drainage_density.txt')
+    for f in glob.glob('*.nc'):
+        os.remove(f)
 
 
 def test_model_basic_steady_solution():
