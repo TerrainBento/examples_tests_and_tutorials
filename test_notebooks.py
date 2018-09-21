@@ -61,7 +61,7 @@ def test_introduction_to_output_writers():
 #
 # def test_model_basic_var_m_steady_solution():
 #     nb, errors = _notebook_run(os.path.join(_TEST_DIR, "coupled_process_elements/model_basic_var_m_steady_solution.ipynb"))
-#     assert errors ==s []
+#     assert errors == []
 #
 #
 # def test_model_basicCh_steady_solution():
