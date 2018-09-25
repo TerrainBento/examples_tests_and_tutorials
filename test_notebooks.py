@@ -5,11 +5,13 @@ import tempfile
 import nbformat
 
 _TEST_DIR = os.path.abspath(os.path.dirname(__file__))
-_EXCLUDE = ["coupled_process_elements/model_basic_steady_solution.ipynb",
-            "coupled_process_elements/model_basic_var_m_steady_solution.ipynb",
-            "coupled_process_elements/model_basicCh_steady_solution.ipynb",
-            "coupled_process_elements/model_basicVs_steady_solution.ipynb",
-            "coupled_process_elements/model_basicRt_steady_solution.ipynb"]
+_EXCLUDE = [
+    "coupled_process_elements/model_basic_steady_solution.ipynb",
+    "coupled_process_elements/model_basic_var_m_steady_solution.ipynb",
+    "coupled_process_elements/model_basicCh_steady_solution.ipynb",
+    "coupled_process_elements/model_basicVs_steady_solution.ipynb",
+    "coupled_process_elements/model_basicRt_steady_solution.ipynb",
+]
 
 
 def all_notebooks(path="."):
