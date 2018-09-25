@@ -52,18 +52,14 @@ install:
     popd
     popd
     pushd ../..
-    pwd
     git clone --depth=50 https://github.com/TerrainBento/terrainbento.git TerrainBento/terrainbento
     pushd TerrainBento/terrainbento
-    pwd
-    ls
     git fetch origin master
     git checkout -qf master
     conda install --file=requirements-travis-tutorials.txt
     python setup.py develop
     popd
     popd
-    pwd
   fi
 - pwd
 - conda install --file=requirements.txt
