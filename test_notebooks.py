@@ -11,6 +11,7 @@ _EXCLUDE = [
     "model_basicCh_steady_solution.ipynb",
     "model_basicVs_steady_solution.ipynb",
     "model_basicRt_steady_solution.ipynb",
+    "readme_example.ipynb",
 ]
 
 

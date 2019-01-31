@@ -1,8 +1,8 @@
 env:
   matrix:
   - TRAVIS_PYTHON_VERSION="2.7"
-  - TRAVIS_PYTHON_VERSION="3.5"
   - TRAVIS_PYTHON_VERSION="3.6"
+  - TRAVIS_PYTHON_VERSION="3.7"
   global:
     - CONDA_PREFIX=$HOME/miniconda
     - MINICONDA_URL_BASE="https://repo.continuum.io/miniconda/Miniconda3-latest"
@@ -38,8 +38,8 @@ install:
 - conda install scripting -c csdms-stack
 - |
   if [[ "$TRAVIS_BRANCH" == "release" ]]; then
-    conda install landlab -c landlab
-    conda install terrainbento -c terrainbento
+    conda install landlab -c conda-forge
+    conda install terrainbento -c conda-forge
   else
     pushd ../..
     git clone --depth=50 https://github.com/landlab/landlab.git landlab/landlab
