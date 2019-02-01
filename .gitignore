@@ -37,3 +37,9 @@ docs/_static
 docs/_templates
 
 *.nc
+
+\.pytest_cache/README\.md
+
+\.pytest_cache/v/cache/lastfailed
+
+\.pytest_cache/v/cache/nodeids
